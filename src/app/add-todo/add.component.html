@@ -1,0 +1,14 @@
+<div>
+    <input
+      type="text"
+      [(ngModel)]="taskTitle"
+      (keyup.enter)="onAdd()"/>
+
+    <button
+      type="button"
+      (click)="onAdd()">Add</button>
+</div>
+
+<div *ngIf="isMatchingTitle">
+  this task already exist
+</div>

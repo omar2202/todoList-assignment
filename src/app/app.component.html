@@ -1,0 +1,26 @@
+<h1>{{ projectName }}</h1>
+<br>
+
+
+<select
+  name="filter"
+  (change)="filter()"
+  [(ngModel)]="taskValues">
+    <option value="All">All</option>
+    <option value="completed">Completed</option>
+</select>
+<br>
+<br>
+<add-todo
+  [tasks]="taskList"
+  (add)="add($event)">
+</add-todo>
+
+<situation
+  *ngFor="let task of filtered"
+  [task]="task"
+  (check)="filter()"
+  (delete)="delete(task)">
+</situation>
+
+
